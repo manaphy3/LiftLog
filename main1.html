@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>タスク管理アプリ</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>タスク管理アプリ</h1>
+    </header>
+    <main>
+        <section class="add-task">
+            <h2>やること追加</h2>
+            <form>
+                <label for="task-name">タスク名</label>
+                <input type="text" id="task-name" name="task-name" required />
+
+                <label for="task-priority">優先度</label>
+                <select id="task-priority" name="task-priority">
+                    <option value="high">☆☆☆</option>
+                    <option value="medium">☆☆</option>
+                    <option value="low">☆</option>
+                </select>
+
+                <button type="submit">追加</button>
+            </form>
+        </section>
+
+        <section class="task-list">
+            <h2>やることリスト</h2>
+
+            <div class="sort-section">
+                <label for="sort">並び替え</label>
+                <select id="sort" name="sort">
+                    <option value="name">名前順</option>
+                    <option value="priority">優先度順</option>
+                    <option value="status">進捗状況順</option>
+                    <option value="updated">更新日付順</option>
+                    <option value="created">登録日順</option>
+                </select>
+            </div>
+
+            <div class="filter-section">
+                <input type="checkbox" id="hide-completed" name="hide-completed" />
+                <label for="hide-completed">完了したタスクを表示しない</label><br>
+                <button class="filter-btn" data-status="todo">これから</button>
+                <button class="filter-btn" data-status="in-progress">進行中</button>
+                <button class="filter-btn" data-status="done">完了</button>
+                <button class="filter-btn" data-status="">すべて表示</button>
+            </div>
+
+            <ul class="tasks">
+                <!-- タスクはここに追加される -->
+            </ul>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
